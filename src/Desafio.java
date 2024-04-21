@@ -12,5 +12,14 @@ public class Desafio {
                 Saldo Disponible: $ %1.2f
                 """;
         System.out.printf(consultaDeDatos,nombreCliente,tipoDeCuenta,saldo);
+
+        String principalMenu = """
+                **Escriba el numero de la operacion deseada**
+                1 - Consultar saldo
+                2 - Retirar
+                3 - Depositar
+                9 - Salir
+                """;
+        System.out.println(principalMenu);
     }
 }
