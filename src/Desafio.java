@@ -2,11 +2,15 @@ import java.util.*;
 public class Desafio {
     public static void main(String[] args){
 
-//        Scanner ingresoDeDatos = new Scanner(System.in);
+
+
+
         Scanner ingresoDeOpciones = new Scanner(System.in);
+
         String nombreCliente = "Tony Stark";
         String tipoDeCuenta = "Corriente";
         double saldo = 1599.99;
+
         double saldoRetirado;
         double saldoIngresado;
         int opciones = 0;
@@ -34,44 +38,71 @@ public class Desafio {
         while (opciones !=9){
             System.out.println(principalMenu);
             opciones = ingresoDeOpciones.nextInt();
-            System.out.println();
 
             if (opciones == 1){
                 //MUESTRA EL SALDO
-                System.out.println("Su saldo actual es de: $ " + saldo + '\n');
+
+                System.out.println('\n' + "Su saldo actualizado es de: $ " + saldo + '\n');
 
             } else if (opciones == 2) {
-                //SALDO RETIRADO Y ALTERADO
-                System.out.println("Cuanto dinero retirara?" + '\n');
+
+                System.out.println("\nCuanto dinero retirara?\n");
                 saldoRetirado = ingresoDeOpciones.nextDouble();
-                double restoSaldo = saldo - saldoRetirado;
-                System.out.println('\n' + "Tu nuevo saldo es de: $ " + restoSaldo + '\n');
 
-            } else if (opciones == 3) {
+                if (saldo > saldoRetirado){
+                    saldo = saldo - saldoRetirado;
+                    System.out.println('\n' + "Tu nuevo saldo es de: $ " + saldo + '\n');
 
-                if (){
-                    // RESTO SALDO ES DIFERENTE DE 0 TRUE SE CUMPLE
-                    System.out.println("Cuanto dinero depositara?" + '\n');
-                    saldoIngresado = ingresoDeOpciones.nextDouble();
-                    double aumentoSaldo = saldo + saldoIngresado;
-                    System.out.println("Tu nuevo saldo es de: $ " + aumentoSaldo + '\n');
-                }else{
-                    //SINO TOMA EL RESTO SALDO COMO SALDO ACTUAL Y LO SUMA A A NUEVO SALDO
+                }else {
+                    System.out.println("Saldo insuficiente\n");
                 }
 
-
-
-
-
-
-                System.out.println("Cuanto dinero depositara?" + '\n');
+            } else if (opciones == 3) {
+                System.out.println("\nCuanto dinero depositara?\n");
                 saldoIngresado = ingresoDeOpciones.nextDouble();
-                double aumentoSaldo = saldo + saldoIngresado;
-                System.out.println("Tu nuevo saldo es de: $ " + aumentoSaldo + '\n');
 
+                saldo = saldo + saldoIngresado;
+                System.out.println("\nTu nuevo saldo es de: $ " + saldo + '\n');
+            } else if (opciones == 9) {
+                System.out.println("\nFinalizacion el programa. Gracias por usar nuestros servicios");
             }else {
-                System.out.println("Finalizacion el programa. Gracias por usar nuestros servicios");
+                System.out.println("\nOpcion no valida\n");
             }
+        }
+
+
+
+//      PARA INGRESAR NUEVO CLIENTE
+
+        Scanner ingresoDeDatos = new Scanner(System.in);
+
+        String nombreNuevoCliente;
+        String cuentaNuevoCliente;
+        double saldoNuevoCliente;
+
+        String consultaNuevosDatos = """
+                \nNombre del Cliente: %s
+                Tipo de cuenta: %s
+                Saldo Disponible: $ %1.2f
+                """;
+
+        System.out.println("Es usted un cliente nuevo? (Si/No)");
+        String pregunta = ingresoDeDatos.nextLine();
+        String clienteNuevo = "Si";
+
+        if (pregunta.equalsIgnoreCase(clienteNuevo)){
+
+            System.out.println("\nIngrese su nombre: ");
+            nombreNuevoCliente = ingresoDeDatos.nextLine();
+            System.out.println("\nIngrese su tipo de cuenta: ");
+            cuentaNuevoCliente = ingresoDeDatos.nextLine();
+            System.out.println("\nIngrese su saldo disponible:");
+            saldoNuevoCliente = ingresoDeDatos.nextDouble();
+
+            System.out.printf(consultaNuevosDatos,nombreNuevoCliente,cuentaNuevoCliente,saldoNuevoCliente);
+
+        }else {
+            System.out.println("programa finalizado");
 
 
         }
