@@ -1,48 +1,9 @@
 import java.util.*;
 public class Desafio {
     public static void main(String[] args){
-        Scanner ingresoDeOpciones = new Scanner(System.in);
-        Scanner ingresoDeDatos = new Scanner(System.in);
-//MENU PRINCIPAL
-        String principalMenu = """
-                *********************************************
-                **Escriba el numero de la operacion deseada**
-                1 - Consultar saldo
-                2 - Retirar
-                3 - Depositar
-                9 - Salir
-                """;
 
-//VARIABLES - CLIENTE POR DEFECTO
-        String nombreCliente = "Tony Stark";
-        String tipoDeCuenta = "Corriente";
-        double saldo = 1599.99;
 
-//VARIABLES DE RETIRO E INGRESO DE NUEVO Y DEFAULT CLIENTE
-        double saldoRetirado, saldoNuevoRetirado;
-        double saldoIngresado, saldoNuevoIngresado;
-        int opciones = 0;
 
-        String consultaDeDatos = """
-                *********************************************
-                \nNombre del Cliente: %s
-                Tipo de cuenta: %s
-                Saldo Disponible: $ %1.2f
-                """;
-
-// VARIABLES - NUEVO CLIENTE
-        String nombreNuevoCliente;
-        String cuentaNuevoCliente;
-        double saldoNuevoCliente;
-
-        String consultaNuevosDatos = """
-                \n*********************************************
-                \nNombre del Cliente: %s
-                Tipo de cuenta: %s
-                Saldo Disponible: $ %1.2f
-                """;
-
-//PREGUNTA SI ES CLIENTE NUEVO O NO
         String pregunta = """
                 \n*********************************************
                 \nEs usted un cliente nuevo? (Si/No)
@@ -50,6 +11,11 @@ public class Desafio {
         System.out.println(pregunta);
         String respuesta = ingresoDeDatos.nextLine();
         String clienteNuevo = "Si";
+//MENU PRINCIPAL
+//VARIABLES - CLIENTE POR DEFECTO
+//VARIABLES DE RETIRO E INGRESO DE NUEVO Y DEFAULT CLIENTE
+//PREGUNTA SI ES CLIENTE NUEVO O NO
+
 
 //CLIENTE NUEVO
         if (respuesta.equalsIgnoreCase(clienteNuevo)) {

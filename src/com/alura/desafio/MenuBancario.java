@@ -1,20 +1,20 @@
 package com.alura.desafio;
+import com.alura.desafio.ClientDefault;
+
+import java.util.Scanner;
 
 public class MenuBancario {
 
-    String principalMenu;
-    String consultaDeDatos;
+    private double saldoRetirado, saldoNuevoRetirado;
+    private double saldoIngresado, saldoNuevoIngresado;
+    private int opciones = 0;
+    private String principalMenu;
+    private String consultaDeDatos;
 
-    public String getPrincipalMenu() {
-        return ;
-    }
-
-    public String getConsultaDeDatos() {
-        return ;
-    }
-
+    Scanner ingresoDeOpciones = new Scanner(System.in);
+    Scanner ingresoDeDatos = new Scanner(System.in);
     public void menuPrincipal(){
-        System.out.printf("""
+        System.out.println("""
                 *********************************************
                 **Escriba el numero de la operacion deseada**
                 1 - Consultar saldo
@@ -24,13 +24,23 @@ public class MenuBancario {
                 """);
     }
 
+//        System.out.printf("""
+//            *********************************************
+//            \nNombre del Cliente: %s
+//            Tipo de cuenta: %s
+//            Saldo Disponible: $ %1.2f
+//            """,);
+
     public void consultaDatos(){
         System.out.printf("""
-                *********************************************
-                \nNombre del Cliente: %s
-                Tipo de cuenta: %s
-                Saldo Disponible: $ %1.2f
-                """);
+            *********************************************
+            \nNombre del Cliente: %s
+            Tipo de cuenta: %s
+            Saldo Disponible: $ %1.2f
+            """,
+    }
+//    public void consultaDatos(){
+
     }
 
 }
