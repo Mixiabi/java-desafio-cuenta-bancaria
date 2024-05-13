@@ -1,21 +1,17 @@
 import java.util.*;
+import com.alura.desafio.MenuBancario;
+
 public class Desafio {
     public static void main(String[] args){
 
 
+        Scanner ingresoDeOpciones = new Scanner(System.in);
+q       Scanner
+        Scanner ingresoDeDatos = new Scanner(System.in);
 
-        String pregunta = """
-                \n*********************************************
-                \nEs usted un cliente nuevo? (Si/No)
-                """;
-        System.out.println(pregunta);
+
         String respuesta = ingresoDeDatos.nextLine();
         String clienteNuevo = "Si";
-//MENU PRINCIPAL
-//VARIABLES - CLIENTE POR DEFECTO
-//VARIABLES DE RETIRO E INGRESO DE NUEVO Y DEFAULT CLIENTE
-//PREGUNTA SI ES CLIENTE NUEVO O NO
-
 
 //CLIENTE NUEVO
         if (respuesta.equalsIgnoreCase(clienteNuevo)) {
@@ -29,24 +25,33 @@ public class Desafio {
 
             System.out.printf(consultaNuevosDatos, nombreNuevoCliente, cuentaNuevoCliente, saldoNuevoCliente);
 
+//***************************************************************
             while (opciones != 9) {
                 System.out.println('\n' + principalMenu);
                 opciones = ingresoDeOpciones.nextInt();
-
+//***************************************************************
                 if (opciones == 1) {
                     //MUESTRA EL SALDO
                     System.out.println("\nSu saldo actualizado es de: $ " + saldoNuevoCliente + '\n');
                     //AGREGAR NUEVO RETIRO
+                    //***************************************************************
                 } else if (opciones == 2) {
 
                     System.out.println("\nCuanto dinero retirara?\n");
                     saldoNuevoRetirado = ingresoDeOpciones.nextDouble();
+                    //***************************************************************
                     if (saldoNuevoCliente > saldoNuevoRetirado) {
                         saldoNuevoCliente -= saldoNuevoRetirado;
                         System.out.println('\n' + "Tu nuevo saldo es de: $ " + saldoNuevoCliente + '\n');
+                        //***************************************************************
                     } else {
                         System.out.println("\nSaldo insuficiente\n");
                     }
+//***************************************************************
+// ***************************************************************
+// ***************************************************************
+
+
                     //AGREGAR NUEVO INGRESO
                 } else if (opciones == 3) {
                     System.out.println("\nCuanto dinero depositara?\n");
@@ -59,6 +64,8 @@ public class Desafio {
                     System.out.println("\nOpcion no valida\n");
                 }
             }
+
+
 
 //CLIENTE DEFAULT
         } else {

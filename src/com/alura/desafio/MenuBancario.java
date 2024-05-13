@@ -1,6 +1,4 @@
 package com.alura.desafio;
-import com.alura.desafio.ClientDefault;
-
 import java.util.Scanner;
 
 public class MenuBancario {
@@ -10,37 +8,48 @@ public class MenuBancario {
     private int opciones = 0;
     private String principalMenu;
     private String consultaDeDatos;
-
-    Scanner ingresoDeOpciones = new Scanner(System.in);
-    Scanner ingresoDeDatos = new Scanner(System.in);
-    public void menuPrincipal(){
+    private String respuesta;
+//***************************************************************
+    public int pregunta(MenuBancario respuesta){
+        Scanner respuesta = new Scanner(System.in);
         System.out.println("""
-                *********************************************
-                **Escriba el numero de la operacion deseada**
-                1 - Consultar saldo
-                2 - Retirar
-                3 - Depositar
-                9 - Salir
+                \n*********************************************
+                \nEs usted un cliente nuevo? (Si/No)
                 """);
+        if (respuesta == respuesta.equals('si')){
+            System.out.println("\nIngrese su nombre: ");
+            nombreNuevoCliente = ingresoDeDatos.nextLine();
+            System.out.println("\nIngrese su tipo de cuenta: ");
+            cuentaNuevoCliente = ingresoDeDatos.nextLine();
+            System.out.println("\nIngrese su saldo disponible:");
+            saldoNuevoCliente = ingresoDeDatos.nextDouble();
+
+            System.out.printf(consultaNuevosDatos, nombreNuevoCliente, cuentaNuevoCliente, saldoNuevoCliente);
+        }
     }
 
-//        System.out.printf("""
-//            *********************************************
-//            \nNombre del Cliente: %s
-//            Tipo de cuenta: %s
-//            Saldo Disponible: $ %1.2f
-//            """,);
-
-    public void consultaDatos(){
-        System.out.printf("""
+//***************************************************************
+    public void menu(){
+     System.out.println("""
             *********************************************
-            \nNombre del Cliente: %s
-            Tipo de cuenta: %s
-            Saldo Disponible: $ %1.2f
-            """,
+            **Escriba el numero de la operacion deseada**
+            1 - Consultar saldo
+            2 - Retirar
+            3 - Depositar
+            9 - Salir
+            """);
     }
-//    public void consultaDatos(){
-
-    }
+//***************************************************************
+//    public int menuPrincipal(MenuBancario opcion){
+//        while (opciones != 9){
+//            System.out.println('\n' + principalMenu);
+//            opciones = ingresoDeOpciones.nextInt();
+//            if (opciones == 1) {
+//                //MUESTRA EL SALDO
+//                System.out.println("\nSu saldo actualizado es de: $ " + saldoNuevoCliente + '\n');
+//
+//        }
+//
+//    }
 
 }
