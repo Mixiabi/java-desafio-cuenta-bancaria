@@ -14,7 +14,9 @@ public class Desafio {
                 """;
 
 //VARIABLES - CLIENTE POR DEFECTO
-
+        String nombreCliente = "Tony Stark";
+        String tipoDeCuenta = "Corriente";
+        double saldo = 1599.99;
 
 //VARIABLES DE RETIRO E INGRESO DE NUEVO Y DEFAULT CLIENTE
         double saldoRetirado, saldoNuevoRetirado;
