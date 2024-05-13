@@ -8,24 +8,23 @@ public class MenuBancario {
     private int opciones = 0;
     private String principalMenu;
     private String consultaDeDatos;
-    private String respuesta;
+
+
+
+
 //***************************************************************
     public int pregunta(MenuBancario respuesta){
-        Scanner respuesta = new Scanner(System.in);
-        System.out.println("""
-                \n*********************************************
-                \nEs usted un cliente nuevo? (Si/No)
-                """);
-        if (respuesta == respuesta.equals('si')){
-            System.out.println("\nIngrese su nombre: ");
-            nombreNuevoCliente = ingresoDeDatos.nextLine();
-            System.out.println("\nIngrese su tipo de cuenta: ");
-            cuentaNuevoCliente = ingresoDeDatos.nextLine();
-            System.out.println("\nIngrese su saldo disponible:");
-            saldoNuevoCliente = ingresoDeDatos.nextDouble();
 
-            System.out.printf(consultaNuevosDatos, nombreNuevoCliente, cuentaNuevoCliente, saldoNuevoCliente);
-        }
+//        if (respuesta == respuesta.equals('si')){
+//            System.out.println("\nIngrese su nombre: ");
+//            nombreNuevoCliente = ingresoDeDatos.nextLine();
+//            System.out.println("\nIngrese su tipo de cuenta: ");
+//            cuentaNuevoCliente = ingresoDeDatos.nextLine();
+//            System.out.println("\nIngrese su saldo disponible:");
+//            saldoNuevoCliente = ingresoDeDatos.nextDouble();
+//
+//            System.out.printf(consultaNuevosDatos, nombreNuevoCliente, cuentaNuevoCliente, saldoNuevoCliente);
+//        }
     }
 
 //***************************************************************
