@@ -2,7 +2,6 @@ package com.alura.desafio;
 import javax.swing.*;
 
 public class MenuBancario {
-//                          CLIENTE
 
     private double saldoRetirado;
     private double saldoNuevoRetirado;
@@ -24,9 +23,8 @@ public class MenuBancario {
     }
 
 
-
 //**********************************************************************************
-    //                  NUEVO CLIENTE
+//                  NUEVO CLIENTE
 
     public double getSaldoNuevoRetirado() {
         return saldoNuevoRetirado;
@@ -45,9 +43,8 @@ public class MenuBancario {
     }
 
 
-
-
 //**************************************************************************
+//                  CLIENTE RECURRENTE
     private String nombreCliente = "Tony Stark";
     private  String tipoDeCuenta = "Corriente";
     private double saldoCliente = 1599.99;
@@ -68,23 +65,6 @@ public class MenuBancario {
         saldoCliente = saldoCliente - saldoRetirado;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    private String consultaDeDatos;
 
     private int seleccion;
     public int getSeleccion() {

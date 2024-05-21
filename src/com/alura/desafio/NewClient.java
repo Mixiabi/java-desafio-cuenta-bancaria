@@ -1,7 +1,6 @@
 package com.alura.desafio;
-
 import javax.swing.*;
-//public class NewClient extends Pregunta {
+
 public class NewClient extends MenuBancario {
     private String nombreNuevoCliente;
     private String cuentaNuevoCliente;
@@ -29,8 +28,7 @@ public class NewClient extends MenuBancario {
         this.saldoNuevoCliente = saldoNuevoCliente;
     }
 
-//    MenuBancario nuevaOperacion = new MenuBancario();
-
+//OPERACION RETIRAR Y DEPOSITAR
     public void nuevoDeposito(){
         saldoNuevoCliente = getSaldoNuevoIngresado() + saldoNuevoCliente;
     }
@@ -43,7 +41,7 @@ public class NewClient extends MenuBancario {
         super.preguntaPrincipal();
     }
 
-    //MOSTRAR SALDO COMPLETO
+//MOSTRAR SALDO COMPLETO
     public String mostrarDatosCompletos() {
         return String.format("""
                         Informacion Completa: \n
@@ -53,7 +51,7 @@ public class NewClient extends MenuBancario {
                         """,
                 getNombreNuevoCliente(), getCuentaNuevoCliente(), getSaldoNuevoCliente());
     }
-
+//MOSTRAR PREGUNTAS A NUEVO CLIENTE
     public void preguntaClienteNuevo(){
         setNombreNuevoCliente(JOptionPane.showInputDialog(null,"Ingrese su nombre","Informacion",JOptionPane.QUESTION_MESSAGE));
 
@@ -62,7 +60,7 @@ public class NewClient extends MenuBancario {
         setSaldoNuevoCliente(Math.round((Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese su saldo","Informacion",JOptionPane.QUESTION_MESSAGE))*100)/100));
 
     }
-
+//MOSTRAR MENU BANCARIO
     public void mostrarMenuBancarioNewClient() {
         Object[] opcionesMenuBancarioNewClient = {"Realizar Consulta", "Deposito", "Retiro", "Salir"};
 

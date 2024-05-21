@@ -22,6 +22,7 @@
 //                JOptionPane.INFORMATION_MESSAGE, null,
 //                opcionesMenuBancarioNewClient, opcionesMenuBancarioNewClient[0]);
 
+
 //    if (menu == opcionesMenuBancarioNewClient[0]) {
 //        JOptionPane.showMessageDialog(null,
 //                mostrarDatosCompletos(), "Consulta de Datos",

@@ -3,8 +3,6 @@ import javax.swing.*;
 
 public class ClientDefault extends MenuBancario {
 
-//    MenuBancario clienteUsual = new MenuBancario();
-
     @Override
     public void retiro() {
         super.retiro();
