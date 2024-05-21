@@ -97,39 +97,22 @@ public class MenuBancario {
     public void preguntaPrincipal(){
         setSeleccion(JOptionPane.showConfirmDialog(null, "¿Es usted cliente nuevo?", "Confirmación", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE));
 
-        if(getSeleccion() == JOptionPane.YES_OPTION) {
-            NewClient clienteNuevo = new NewClient();
-            clienteNuevo.preguntaClienteNuevo();
-            clienteNuevo.mostrarMenuBancarioNewClient();
+        while(seleccion != JOptionPane.CANCEL_OPTION){
+            if(getSeleccion() == JOptionPane.YES_OPTION) {
+                NewClient clienteNuevo = new NewClient();
+                clienteNuevo.preguntaClienteNuevo();
+                clienteNuevo.mostrarMenuBancarioNewClient();
 
+            }else {
+                ClientDefault clienteRecurrente = new ClientDefault();
+                clienteRecurrente.mostrarMenuBancarioClient();
 
-        } else if (getSeleccion() == JOptionPane.NO_OPTION) {
-            ClientDefault clienteRecurrente = new ClientDefault();
-            clienteRecurrente.mostrarMenuBancarioClient();
-
-        } else {
-            JOptionPane.showMessageDialog(null,
-                    "Gracias por usar nuestro servicios", "Finalizacion",
-                    JOptionPane.INFORMATION_MESSAGE);
+            }
         }
+        JOptionPane.showMessageDialog(null,
+                "Gracias por usar nuestro servicios", "Finalizacion",
+                JOptionPane.INFORMATION_MESSAGE);
+
     }
-
-
-
-//****************          MENU PARA CLIENTE NUEVO
-
-
-//****************          MENU PARA CLIENTE
-
-
-
-
-
-
-
-
-
-
-
 
 }

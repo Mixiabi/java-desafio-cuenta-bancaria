@@ -45,7 +45,7 @@ public class NewClient extends MenuBancario {
                         Tipo de Cuenta: %s
                         Saldo disponible: %.2f
                         """,
-                nombreNuevoCliente, cuentaNuevoCliente, saldoNuevoCliente);
+                getNombreNuevoCliente(), getCuentaNuevoCliente(), getSaldoNuevoCliente());
     }
 
 
@@ -65,28 +65,39 @@ public class NewClient extends MenuBancario {
                 JOptionPane.INFORMATION_MESSAGE, null,
                 opcionesMenuBancarioNewClient, opcionesMenuBancarioNewClient[0]);
 
-        if (menu == opcionesMenuBancarioNewClient[0]) {
-            JOptionPane.showMessageDialog(null,
-                    mostrarDatosCompletos(), "Consulta de Datos",
-                    JOptionPane.INFORMATION_MESSAGE);
 
-
-        } else if (menu == opcionesMenuBancarioNewClient[1]) {
-            setSaldoNuevoIngresado(Double.parseDouble(JOptionPane.showInputDialog("Cuanto desea depositar?")));
-            nuevoDeposito();
-            mostrarMenuBancarioNewClient();
-        } else if (menu == opcionesMenuBancarioNewClient[2]) {
-            setSaldoNuevoRetirado(Double.parseDouble(JOptionPane.showInputDialog("Cuanto desea retirar?")));
-            if (getSaldoNuevoRetirado() > getSaldoNuevoCliente()) {
+        while(menu != opcionesMenuBancarioNewClient[3]) {
+            if (menu == null) {
                 JOptionPane.showMessageDialog(null,
-                        "Saldo insuficiente", "Consulta de Datos",
+                        "Gracias por usar nuestro servicios", "Finalizacion",
                         JOptionPane.INFORMATION_MESSAGE);
-                mostrarMenuBancarioNewClient();
-            }else {
-                nuevoRetiro();
-                mostrarMenuBancarioNewClient();
+                break;
+            } else {
+                if (menu == opcionesMenuBancarioNewClient[0]) {
+                    JOptionPane.showMessageDialog(null,
+                            mostrarDatosCompletos(), "Consulta de Datos",
+                            JOptionPane.INFORMATION_MESSAGE);
+                } else if (menu == opcionesMenuBancarioNewClient[1]) {
+                    setSaldoNuevoIngresado(Double.parseDouble(JOptionPane.showInputDialog("Cuanto desea depositar?")));
+                    nuevoDeposito();
+                    mostrarMenuBancarioNewClient();
+                } else {
+                    setSaldoNuevoRetirado(Double.parseDouble(JOptionPane.showInputDialog("Cuanto desea retirar?")));
+                    if (getSaldoNuevoRetirado() > getSaldoNuevoCliente()) {
+                        JOptionPane.showMessageDialog(null,
+                                "Saldo insuficiente", "Consulta de Datos",
+                                JOptionPane.INFORMATION_MESSAGE);
+                        mostrarMenuBancarioNewClient();
+                    } else {
+                        nuevoRetiro();
+                        mostrarMenuBancarioNewClient();
+                    }
+                }
             }
+            mostrarMenuBancarioNewClient();
         }
+        preguntaPrincipal();
     }
-
 }
+
+
