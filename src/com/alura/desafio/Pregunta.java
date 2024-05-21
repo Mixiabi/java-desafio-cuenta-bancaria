@@ -17,6 +17,11 @@
 
 //**********        PRIMER MENU PARA EL NUEVO CLIENTE
 
+//**        Object menu = JOptionPane.showInputDialog(null,
+//                "Selecciona la operacion deseada", "Menu",
+//                JOptionPane.INFORMATION_MESSAGE, null,
+//                opcionesMenuBancarioNewClient, opcionesMenuBancarioNewClient[0]);
+
 //    if (menu == opcionesMenuBancarioNewClient[0]) {
 //        JOptionPane.showMessageDialog(null,
 //                mostrarDatosCompletos(), "Consulta de Datos",
@@ -39,6 +44,13 @@
 
 
 //**********        PRIMER MENU PARA EL CLIENTE RECURRENTE
+
+//        Object menu = JOptionPane.showInputDialog(null,
+//                "Selecciona la operacion deseada", "Menu",
+//                JOptionPane.INFORMATION_MESSAGE,null ,
+//                opcionesMenuBancarioClient, opcionesMenuBancarioClient[0]);
+//    } else if (menu == opcionesMenuBancarioClient[1]) {
+
 
 //                if (menu == opcionesMenuBancarioClient[0]) {
 //                    JOptionPane.showMessageDialog(null,
