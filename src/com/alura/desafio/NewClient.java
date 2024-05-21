@@ -37,17 +37,22 @@ public class NewClient extends MenuBancario {
     public void nuevoRetiro(){
         saldoNuevoCliente = saldoNuevoCliente - getSaldoNuevoRetirado();
     }
-//MOSTRAR SALDO COMPLETO
+
+    @Override
+    public void preguntaPrincipal() {
+        super.preguntaPrincipal();
+    }
+
+    //MOSTRAR SALDO COMPLETO
     public String mostrarDatosCompletos() {
         return String.format("""
                         Informacion Completa: \n
                         Nombre: %s
                         Tipo de Cuenta: %s
-                        Saldo disponible: %.2f
+                        Saldo disponible: S/ %.2f
                         """,
                 getNombreNuevoCliente(), getCuentaNuevoCliente(), getSaldoNuevoCliente());
     }
-
 
     public void preguntaClienteNuevo(){
         setNombreNuevoCliente(JOptionPane.showInputDialog(null,"Ingrese su nombre","Informacion",JOptionPane.QUESTION_MESSAGE));
@@ -60,43 +65,37 @@ public class NewClient extends MenuBancario {
 
     public void mostrarMenuBancarioNewClient() {
         Object[] opcionesMenuBancarioNewClient = {"Realizar Consulta", "Deposito", "Retiro", "Salir"};
-        Object menu = JOptionPane.showInputDialog(null,
-                "Selecciona la operacion deseada", "Menu",
-                JOptionPane.INFORMATION_MESSAGE, null,
-                opcionesMenuBancarioNewClient, opcionesMenuBancarioNewClient[0]);
 
+        int menu = JOptionPane.showOptionDialog(null,"Selecciones la operacion deseada",
+                "Menu", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
+                null, opcionesMenuBancarioNewClient, opcionesMenuBancarioNewClient[0]);
 
-        while(menu != opcionesMenuBancarioNewClient[3]) {
-            if (menu == null) {
-                JOptionPane.showMessageDialog(null,
-                        "Gracias por usar nuestro servicios", "Finalizacion",
+        if (menu == 0) {
+            JOptionPane.showMessageDialog(null,
+                        mostrarDatosCompletos(), "Consulta de Datos",
                         JOptionPane.INFORMATION_MESSAGE);
-                break;
-            } else {
-                if (menu == opcionesMenuBancarioNewClient[0]) {
-                    JOptionPane.showMessageDialog(null,
-                            mostrarDatosCompletos(), "Consulta de Datos",
-                            JOptionPane.INFORMATION_MESSAGE);
-                } else if (menu == opcionesMenuBancarioNewClient[1]) {
-                    setSaldoNuevoIngresado(Double.parseDouble(JOptionPane.showInputDialog("Cuanto desea depositar?")));
-                    nuevoDeposito();
-                    mostrarMenuBancarioNewClient();
-                } else {
-                    setSaldoNuevoRetirado(Double.parseDouble(JOptionPane.showInputDialog("Cuanto desea retirar?")));
-                    if (getSaldoNuevoRetirado() > getSaldoNuevoCliente()) {
-                        JOptionPane.showMessageDialog(null,
-                                "Saldo insuficiente", "Consulta de Datos",
-                                JOptionPane.INFORMATION_MESSAGE);
-                        mostrarMenuBancarioNewClient();
-                    } else {
-                        nuevoRetiro();
-                        mostrarMenuBancarioNewClient();
-                    }
-                }
-            }
             mostrarMenuBancarioNewClient();
+        } else if (menu == 1) {
+            setSaldoNuevoIngresado(Double.parseDouble(JOptionPane.showInputDialog("Cuanto desea depositar?")));
+            nuevoDeposito();
+            mostrarMenuBancarioNewClient();
+        } else if (menu == 2) {
+            setSaldoNuevoRetirado(Double.parseDouble(JOptionPane.showInputDialog("Cuanto desea retirar?")));
+            if (getSaldoNuevoRetirado() > getSaldoNuevoCliente()) {
+                JOptionPane.showMessageDialog(null,
+                        "Saldo insuficiente", "Consulta de Datos",
+                        JOptionPane.INFORMATION_MESSAGE);
+                mostrarMenuBancarioNewClient();
+            } else {
+                nuevoRetiro();
+                mostrarMenuBancarioNewClient();
+            }
+        }else {
+            JOptionPane.showMessageDialog(null,
+                    "Gracias por usar nuestro servicios", "Finalizacion",
+                    JOptionPane.INFORMATION_MESSAGE);
+            preguntaPrincipal();
         }
-        preguntaPrincipal();
     }
 }
 

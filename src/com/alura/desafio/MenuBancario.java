@@ -95,24 +95,26 @@ public class MenuBancario {
     }
 
     public void preguntaPrincipal(){
-        setSeleccion(JOptionPane.showConfirmDialog(null, "¿Es usted cliente nuevo?", "Confirmación", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE));
 
-        while(seleccion != JOptionPane.CANCEL_OPTION){
-            if(getSeleccion() == JOptionPane.YES_OPTION) {
-                NewClient clienteNuevo = new NewClient();
-                clienteNuevo.preguntaClienteNuevo();
-                clienteNuevo.mostrarMenuBancarioNewClient();
+        setSeleccion(JOptionPane.showConfirmDialog(null, "¿Es usted cliente nuevo?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE));
 
-            }else {
-                ClientDefault clienteRecurrente = new ClientDefault();
-                clienteRecurrente.mostrarMenuBancarioClient();
+        if (getSeleccion()== JOptionPane.CLOSED_OPTION){
+            JOptionPane.showMessageDialog(null,
+                    "Gracias por usar nuestro servicios", "Finalizacion",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else if (getSeleccion() == JOptionPane.YES_OPTION) {
+            NewClient clienteNuevo = new NewClient();
+            clienteNuevo.preguntaClienteNuevo();
+            clienteNuevo.mostrarMenuBancarioNewClient();
 
-            }
+        }else if (getSeleccion() == JOptionPane.NO_OPTION){
+            ClientDefault clienteRecurrente = new ClientDefault();
+            clienteRecurrente.mostrarMenuBancarioClient();
+
+        }else {
+            JOptionPane.showMessageDialog(null,
+                    "Gracias por usar nuestro servicios", "Finalizacion",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
-        JOptionPane.showMessageDialog(null,
-                "Gracias por usar nuestro servicios", "Finalizacion",
-                JOptionPane.INFORMATION_MESSAGE);
-
     }
-
 }
