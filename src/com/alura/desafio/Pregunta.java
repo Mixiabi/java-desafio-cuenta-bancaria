@@ -1,4 +1,22 @@
+//**********        PRIMER MENU PARA EL MENU BANCARIO
+
+//       if(getSeleccion() == JOptionPane.YES_OPTION) {
+//                NewClient clienteNuevo = new NewClient();
+//                clienteNuevo.preguntaClienteNuevo();
+//                clienteNuevo.mostrarMenuBancarioNewClient();
 //
+//        } else if (getSeleccion() == JOptionPane.NO_OPTION) {
+//            ClientDefault clienteRecurrente = new ClientDefault();
+//            clienteRecurrente.mostrarMenuBancarioClient();
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null,
+//                    "Gracias por usar nuestro servicios", "Finalizacion",
+//                    JOptionPane.INFORMATION_MESSAGE);
+
+
+//**********        PRIMER MENU PARA EL NUEVO CLIENTE
+
 //    if (menu == opcionesMenuBancarioNewClient[0]) {
 //        JOptionPane.showMessageDialog(null,
 //                mostrarDatosCompletos(), "Consulta de Datos",
@@ -20,8 +38,8 @@
 //        }
 
 
+//**********        PRIMER MENU PARA EL CLIENTE RECURRENTE
 
-//client default
 //                if (menu == opcionesMenuBancarioClient[0]) {
 //                    JOptionPane.showMessageDialog(null,
 //                            consultaClient(), "Consulta de Datos",
@@ -48,16 +66,3 @@
 //                            "Gracias por usar nuestro servicios", "Finalizacion",
 //                            JOptionPane.INFORMATION_MESSAGE);
 //                }
-
-
-//menu bancario
-
-//
-//        } else if (getSeleccion() == JOptionPane.NO_OPTION) {
-//            ClientDefault clienteRecurrente = new ClientDefault();
-//            clienteRecurrente.mostrarMenuBancarioClient();
-//
-//        } else {
-//            JOptionPane.showMessageDialog(null,
-//                    "Gracias por usar nuestro servicios", "Finalizacion",
-//                    JOptionPane.INFORMATION_MESSAGE);
